@@ -1,0 +1,23 @@
+<div>
+    <h2>Cifrado César</h2>
+    <label>
+      Mensaje:
+      <input [(ngModel)]="mensaje" placeholder="Ingrese su mensaje aquí">
+    </label>
+    <br>
+    <label>
+      Módulo:
+      <input type="number" [(ngModel)]="modulo" placeholder="Ingrese el módulo">
+    </label>
+    <br>
+    <label>
+      <input type="radio" [(ngModel)]="operacion" value="cifrar"> Cifrar
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="operacion" value="descifrar"> Descifrar
+    </label>
+    <br>
+    <button (click)="ejecutarOperacion()">Ejecutar</button>
+    <p>{{ resultado }}</p>
+  </div>
+  
