@@ -6,14 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./cesar-cipher.component.css']
 })
 
+//1
 export class CesarCipherComponent {
   mensaje: string = '';
   modulo: number = 3;
   operacion: string = 'cifrar';
   resultado: string = '';
 
+
   constructor() {}
 
+  //2
   ejecutarOperacion() {
     if (this.operacion === 'cifrar') {
       this.resultado = this.cifrar(this.mensaje, this.modulo);
@@ -22,6 +25,7 @@ export class CesarCipherComponent {
     }
   }
 
+//3
   cifrar(texto: string, modulo: number): string {
     let resultado = '';
     for (let i = 0; i < texto.length; i++) {
@@ -31,7 +35,7 @@ export class CesarCipherComponent {
     }
     return resultado;
   }
-
+//4
   descifrar(textoCifrado: string, modulo: number): string {
     let resultado = '';
     for (let i = 0; i < textoCifrado.length; i++) {
@@ -41,4 +45,14 @@ export class CesarCipherComponent {
     }
     return resultado;
   }
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.resultado)
+        .then(() => {
+            alert('Texto copiado al portapapeles');
+        })
+        .catch(err => {
+            console.error('Error al copiar al portapapeles: ', err);
+        });
+}
+
 }
