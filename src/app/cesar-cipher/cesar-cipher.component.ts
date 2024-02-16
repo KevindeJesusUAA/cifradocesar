@@ -45,6 +45,7 @@ export class CesarCipherComponent {
     }
     return resultado;
   }
+  //5
   copyToClipboard() {
     navigator.clipboard.writeText(this.resultado)
         .then(() => {
